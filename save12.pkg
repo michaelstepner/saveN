@@ -1,0 +1,19 @@
+v 3
+d 'SAVE12': module to save Stata 12 datasets
+d
+d save12 provides a consistent command to save datasets in Stata 12 format,
+d which facilitates collaboration between computers using different versions
+d of Stata. Stata 12 and later versions of Stata can produce datasets in Stata 12
+d format, but not using the same command. save12 assures that the same code
+d shared across multiple computers will save datasets in Stata 12 format,
+d regardless of the host computer's version of Stata.
+d
+d Requires: Stata version 12
+d
+d Distribution-Date: 20161009
+d
+d Author: Michael Stepner
+d Support: email stepner@mit.edu
+d
+f save12.ado
+f save12.sthlp
