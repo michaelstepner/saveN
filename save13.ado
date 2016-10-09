@@ -1,4 +1,4 @@
-*! version 1.0.0  8oct2016  Michael Stepner, stepner@mit.edu
+*! version 1.0.0  9oct2016  Michael Stepner, stepner@mit.edu
 
 /*** Unlicense (abridged):
 This is free and unencumbered software released into the public domain.
@@ -13,13 +13,13 @@ For the full legal text of the Unlicense, see <http://unlicense.org>
 program define save13
 	version 13
 	
-	syntax [anything], [NOLabel replace all]
+	syntax [anything], [noLabel replace all]
 	
 	if c(stata_version)>=13 & c(stata_version)<14 {
-		save `anything', `nolabel' `replace' `all'
+		save `anything', `label' `replace' `all'
 	}
 	else if c(stata_version)>=14 {
-		saveold `anything', `nolabel' `replace' `all' version(13)
+		saveold `anything', `label' `replace' `all' version(13)
 	}
 	else {
 		di as error "Must have Stata version 13 or higher to save in Stata 13 format."
