@@ -1,3 +1,6 @@
+cscript "save12 and save13"
+which save12
+which save13
 
 foreach saveN in "save12" "save13" {
 
@@ -10,9 +13,15 @@ foreach saveN in "save12" "save13" {
 	* "orphans" option not supported
 	rcof "`saveN' `file', orphans" == 198
 
-	* test saving and "replace"
+	* test saving
 	sysuse auto
 	`saveN' `file'
+	
+	dtaversion `file'
+	if ("`saveN'"=="save12") assert r(version) ==  115
+	else if ("`saveN'"=="save13") assert r(version) ==  117
+	
+	* test "replace"
 	rcof "`saveN' `file'" == 602 // already exists, no 'replace'
 	`saveN' `file', replace
 
