@@ -1,3 +1,6 @@
+cscript "save12 and save13"
+which save12
+which save13
 
 foreach saveN in "save12" "save13" {
 
